@@ -23,6 +23,7 @@ var pg = require('pg').native
   , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/node'
   , client
   , query;
+  
 
 var client = new pg.Client(connectionString);
  
