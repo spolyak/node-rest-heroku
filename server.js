@@ -24,7 +24,7 @@ console.log("listening "+PORT);
  // , client
 //  , query;
   
- var client = new Client(process.env.DATABASE_URL);
+ var client = new Client(process.env.HEROKU_POSTGRESQL_PURPLE_URL);
   
 
 //var client = new pg.Client(connectionString);
