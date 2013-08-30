@@ -18,11 +18,17 @@ server.listen(PORT, '0.0.0.0');
 console.log("listening "+PORT);
  
 //Include db_conn file
-var db_conn = require('./db_conn');
+//var db_conn = require('./db_conn');
+var pg = require('pg').native
+  , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/node'
+  , client
+  , query;
+
+var client = new pg.Client(connectionString);
  
 //IMPORT RESOURCES
 var eventsResource = require('./events');
-eventsResource.setAndConnectClient(db_conn.client);
+eventsResource.setAndConnectClient(client);
  
 //DEFINE THE URIs THE SERVER IS RESPONDING TO
 server.get('/events', function(req, res) {
