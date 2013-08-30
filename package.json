@@ -4,7 +4,7 @@
   "dependencies": {    
     "express": "2.5.1", 
     "restify": "2.5.1",    
-    "pg": "0.5.7"
+    "pg": "2.x"
   },
     "engines": {
     "node": "0.10.x",
