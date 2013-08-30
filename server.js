@@ -19,13 +19,15 @@ console.log("listening "+PORT);
  
 //Include db_conn file
 //var db_conn = require('./db_conn');
-var pg = require('pg').native
-  , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/node'
-  , client
-  , query;
+//var pg = require('pg').native
+//  , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/node'
+ // , client
+//  , query;
+  
+ var client = new Client(process.env.DATABASE_URL);
   
 
-var client = new pg.Client(connectionString);
+//var client = new pg.Client(connectionString);
  
 //IMPORT RESOURCES
 var eventsResource = require('./events');
