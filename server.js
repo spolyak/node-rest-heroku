@@ -27,7 +27,7 @@ var pg = require('pg').native
 //var client = new Client(process.env.HEROKU_POSTGRESQL_PURPLE_URL);
   
 
-//var client = new pg.Client(connectionString);
+var client = new pg.Client(connectionString);
  
 //IMPORT RESOURCES
 var eventsResource = require('./events');
