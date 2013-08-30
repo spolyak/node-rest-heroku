@@ -4,3 +4,5 @@ CREATE TABLE event (
     description text NOT NULL,
     date_added timestamp default NULL
 );
+
+http://node-rest-example.herokuapp.com/events
