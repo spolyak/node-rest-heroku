@@ -17,17 +17,12 @@ server.use(restify.bodyParser({ mapParams: false }));
 server.listen(PORT, '0.0.0.0');
 console.log("listening "+PORT);
  
-var pg = require('pg');
-
-var conn;
-
-pg.connect(process.env.HEROKU_POSTGRESQL_PURPLE_URL, function(err, client, done) {
-	conn = client;
-});
+//Include db_conn file
+var db_conn = require('./db_conn');
  
 //IMPORT RESOURCES
 var eventsResource = require('./events');
-eventsResource.setAndConnectClient(conn);
+eventsResource.setAndConnectClient(db_conn.client);
  
 //DEFINE THE URIs THE SERVER IS RESPONDING TO
 server.get('/events', function(req, res) {
